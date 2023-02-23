@@ -21,6 +21,7 @@ public class GlobalScreenListeners implements NativeMouseInputListener, NativeKe
         catch (NativeHookException e) {
             System.err.println("There was a problem registering the native hook.");
             System.err.println(e.getMessage());
+            System.exit(1);
         }
         GlobalScreenListeners globalScreenListeners = new GlobalScreenListeners();
         GlobalScreen.addNativeMouseListener(globalScreenListeners);
@@ -48,7 +49,7 @@ public class GlobalScreenListeners implements NativeMouseInputListener, NativeKe
     }
 
     public void nativeKeyReleased(NativeKeyEvent e) {
-        if (e.getKeyCode() == 62) {
+        if (e.getKeyCode() == Settings.TOGGLE_KEY_CODE) {
             Settings.SWITCH_CLICKER = !Settings.SWITCH_CLICKER;
             if (Settings.SWITCH_CLICKER) {
                 MainGUI.TOGGLE_BUTTON.setText("Turn Off");

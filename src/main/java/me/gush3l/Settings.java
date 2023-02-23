@@ -21,6 +21,8 @@ public class Settings {
 
     public static int JITTER_AMOUNT = 5;
 
+    public static int TOGGLE_KEY_CODE = 62;
+
     public static final RandomCollection<Object> CLICK_TYPE = new RandomCollection<>()
             .add(50, ClickType.NORMAL)
             .add(5, ClickType.SKIP)
